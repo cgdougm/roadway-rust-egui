@@ -1,0 +1,50 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cppvsdbg",
+            "request": "launch",
+            "name": "Debug eGUI App (Windows)",
+            "program": "${workspaceFolder}/target/debug/roadway-rust-egui.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "externalTerminal",
+            "preLaunchTask": "cargo-build"
+        },
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "Debug eGUI App (GDB)",
+            "program": "${workspaceFolder}/target/debug/roadway-rust-egui.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "cargo-build"
+        },
+        {
+            "type": "cppvsdbg",
+            "request": "launch",
+            "name": "Debug Tests (Windows)",
+            "program": "${workspaceFolder}/target/debug/deps/roadway-rust-egui-*.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "externalTerminal",
+            "preLaunchTask": "cargo-test"
+        }
+    ]
+}
